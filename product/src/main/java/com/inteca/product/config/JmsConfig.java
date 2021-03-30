@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JmsConfig {
 
-        public static final String GET_CREDIT = "get-credit";
+        public static final String SAVE_PRODUCT = "save-product";
 
         @Bean // Serialize message content to json using TextMessage
         public MessageConverter jacksonJmsMessageConverter(ObjectMapper objectMapper) {

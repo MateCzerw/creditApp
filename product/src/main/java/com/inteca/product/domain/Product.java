@@ -1,5 +1,4 @@
-package com.inteca.credit.domain;
-
+package com.inteca.product.domain;
 
 import lombok.*;
 
@@ -8,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Getter
 @Setter
 @ToString
@@ -15,12 +15,15 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Credit {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String creditName;
+    private String productName;
+    private int value;
+
+    private int creditId;
 
 }

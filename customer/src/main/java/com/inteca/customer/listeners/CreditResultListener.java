@@ -3,8 +3,10 @@ package com.inteca.customer.listeners;
 
 
 import com.inteca.customer.config.JmsConfig;
+import com.inteca.customer.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import model.CustomerDto;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
@@ -16,11 +18,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class CreditResultListener {
 
+    private final CustomerService customerService;
 
-    @JmsListener(destination = JmsConfig.CREATE_CREDIT)
-    public void listen(Test test) {
+    @JmsListener(destination = JmsConfig.SAVE_CUSTOMER)
+    public void listen(CustomerDto customerDto) {
 
-        System.out.println(test);
+        customerService.saveCustomer(customerDto);
 
     }
 }

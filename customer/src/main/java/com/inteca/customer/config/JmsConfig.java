@@ -11,7 +11,7 @@ import org.springframework.jms.support.converter.MessageType;
 @Configuration
 public class JmsConfig {
 
-        public static final String CREATE_CREDIT = "create-credit";
+    public static final String SAVE_CUSTOMER= "save-customer";
 
     @Bean // Serialize message content to json using TextMessage
     public MessageConverter jacksonJmsMessageConverter(ObjectMapper objectMapper) {

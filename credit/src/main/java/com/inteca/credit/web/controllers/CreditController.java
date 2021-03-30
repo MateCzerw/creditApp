@@ -1,24 +1,29 @@
 package com.inteca.credit.web.controllers;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.inteca.credit.services.listeners.CreditService;
+import lombok.RequiredArgsConstructor;
+import model.CreditOrder;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/credits/")
+@RequiredArgsConstructor
+@RequestMapping("/api/v1/credits")
 public class CreditController {
 
+    private final CreditService creditService;
+
     @GetMapping
-    public void getCredit(){
+    public void getCredit(CreditOrder creditOrder){
+
 
     }
 
 
     @PostMapping
-    public void createCredit(){
+    public int createCredit(@RequestBody CreditOrder creditOrder){
 
+        return creditService.newCreditOrder(creditOrder);
     }
 
 

@@ -4,9 +4,10 @@ package com.inteca.product.listeners;
 
 import com.inteca.product.config.JmsConfig;
 
-import model.HelloWorldMessage;
+import com.inteca.product.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import model.ProductDto;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
@@ -18,11 +19,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductResultListener {
 
+    private final ProductService productService;
 
-    @JmsListener(destination = JmsConfig.GET_CREDIT)
-    public void listen(HelloWorldMessage message) {
 
-        System.out.println(message.getMessage());
+    @JmsListener(destination = JmsConfig.SAVE_PRODUCT)
+    public void listen(ProductDto productDto) {
+
+        productService.saveProduct(productDto);
 
     }
 }
