@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 public class JmsConfig {
 
         public static final String SAVE_PRODUCT = "save-product";
+        public static final String GET_PRODUCTS = "get-products";
+    public static final String SEND_PRODUCTS = "send-products";
 
         @Bean // Serialize message content to json using TextMessage
         public MessageConverter jacksonJmsMessageConverter(ObjectMapper objectMapper) {

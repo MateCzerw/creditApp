@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class CreateCreditManager {
 
+    //todo implementation of saga
+
 //    public static final String ORDER_ID_HEADER = "ORDER_ID";
 //    public static final String ORDER_OBJECT_HEADER = "CREDIT_ORDER";
 //

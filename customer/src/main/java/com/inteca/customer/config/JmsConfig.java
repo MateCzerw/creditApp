@@ -12,6 +12,9 @@ import org.springframework.jms.support.converter.MessageType;
 public class JmsConfig {
 
     public static final String SAVE_CUSTOMER= "save-customer";
+    public static final String GET_CUSTOMERS = "get-customers";
+    public static final String SEND_CUSTOMERS = "send-customers";
+
 
     @Bean // Serialize message content to json using TextMessage
     public MessageConverter jacksonJmsMessageConverter(ObjectMapper objectMapper) {

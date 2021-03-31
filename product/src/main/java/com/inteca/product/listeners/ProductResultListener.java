@@ -9,7 +9,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import model.ProductDto;
 import org.springframework.jms.annotation.JmsListener;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * Created by jt on 2019-09-09.
@@ -19,6 +22,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductResultListener {
 
+
     private final ProductService productService;
 
 
@@ -27,5 +31,12 @@ public class ProductResultListener {
 
         productService.saveProduct(productDto);
 
+    }
+
+
+    @JmsListener(destination = JmsConfig.GET_PRODUCTS)
+    public void listen(List<Integer> creditNumbers) {
+
+        productService.getProducts(creditNumbers);
     }
 }
