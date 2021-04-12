@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  credit:
+    image: library/credit:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+    - "8081:8081"
+  customer:
+    image: library/customer:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8082:8082"
+  product:
+    image: library/product:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8083:8083"

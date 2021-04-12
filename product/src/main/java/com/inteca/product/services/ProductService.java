@@ -6,14 +6,11 @@ import com.inteca.product.domain.Product;
 import com.inteca.product.domain.ProductNotFoundException;
 import com.inteca.product.repositiories.ProductRepository;
 import lombok.RequiredArgsConstructor;
-import model.CustomerDto;
 import model.ProductDto;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor
