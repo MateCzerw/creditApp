@@ -11,6 +11,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <modules>
+        <module>credit</module>
+        <module>customer</module>
+        <module>product</module>
+    </modules>
+
     <artifactId>creditApp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
