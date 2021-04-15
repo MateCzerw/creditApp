@@ -1,18 +1,39 @@
 version: '3.7'
 
 services:
+  jms:
+    image: vromero/activemq-artemis
+    container_name: jms
+    ports:
+      - "8161:8161"
+      - "61616:61616"
   credit:
     image: credit:0.0.1-SNAPSHOT
+    container_name: credit
     mem_limit: 700m
     ports:
-    - "8081:8081"
+      - "8081:8081"
+    depends_on:
+      - jms
+    environment:
+      SPRING_ARTEMIS_HOST: jms
   customer:
     image: customer:0.0.1-SNAPSHOT
+    container_name: customer
     mem_limit: 700m
     ports:
       - "8082:8082"
+    depends_on:
+      - jms
+    environment:
+      SPRING_ARTEMIS_HOST: jms
   product:
     image: product:0.0.1-SNAPSHOT
+    container_name: product
     mem_limit: 700m
     ports:
       - "8083:8083"
+    depends_on:
+      - jms
+    environment:
+      SPRING_ARTEMIS_HOST: jms

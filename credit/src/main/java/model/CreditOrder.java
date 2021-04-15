@@ -7,8 +7,7 @@ import model.CustomerDto;
 import model.ProductDto;
 
 
-@Getter
-@Setter
+@Data
 public class CreditOrder {
 
    private CreditDto creditDto;

@@ -18,7 +18,7 @@ public class CreditController {
     private final CreditService creditService;
 
     @GetMapping
-    public List<CreditResponseDto> getCredits(){
+    public List<CreditResponseDto> getCredits() {
 
         return creditService.getCredits();
     }
@@ -26,7 +26,7 @@ public class CreditController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public int createCredit(@RequestBody CreditOrder creditOrder){
+    public int createCredit(@RequestBody CreditOrder creditOrder) {
 
         return creditService.createCredit(creditOrder);
     }

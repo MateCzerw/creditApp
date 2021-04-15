@@ -7,7 +7,8 @@ public class ProductDto {
 
     private int creditId;
 
-    String productName;
-    int value;
+    private String productName;
+
+    private int value;
 
 }
